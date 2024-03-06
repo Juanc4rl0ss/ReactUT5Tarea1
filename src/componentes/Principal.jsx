@@ -13,8 +13,20 @@ function Principal() {
 
           <h3>Hoy hay {cumpleañeros.length} cumpleaños</h3>
           
-          {/* Le pasamos al prop de Articulo,el valor del objeto JSON con los datos a renderizar*/}
-          <Articulo cumpleañeros={cumpleañeros} />     
+          {/* Usamos un map apuntando al objeto data.js donde están todos los datos, y se los vamos pasando a los props de Articulo*/}
+          {cumpleañeros.map(person => (
+
+          <Articulo
+            key={person.id}
+            imagen={person.image}
+            alt={person.name}
+            name={person.name}
+            age={person.age}
+            
+           />
+          
+          ))};
+
         </section>
 
       </main>
